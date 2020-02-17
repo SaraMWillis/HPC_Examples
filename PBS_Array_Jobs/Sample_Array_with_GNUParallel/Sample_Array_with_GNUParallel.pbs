@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#PBS -q debug
+#PBS -W group_list=<GROUP NAME>
+
+#PBS -N Sample_Array_with_GNUParallel
+
+#PBS -l select=1:ncpus=4:mem=24gb:pcmem=6gb
+#PBS -l walltime=00:00:30
+
+#PBS -J 1-2
+
+module load parallel
+
+cd path/to/working/directory
+
+BLOCK_SIZE=4
+
+### Prints output to show the task indices, the job ID, node ID, and a possible command that could be executed 
+
+seq $(($PBS_ARRAY_INDEX*$BLOCK_SIZE-$BLOCK_SIZE+1)) $(($PBS_ARRAY_INDEX*$BLOCK_SIZE)) | parallel echo "$PBS_JOBID $HOSTNAME Rscript sample_script.R {} RO2"
+© 2020 GitHub, Inc.
