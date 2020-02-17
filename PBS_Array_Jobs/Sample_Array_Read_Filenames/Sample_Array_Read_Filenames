@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#PBS -q standard
+#PBS -W group_list=<group name>
+
+#PBS -N Sample_Array_Read_Filenames
+ 
+#PBS -l select=1:ncpus=1:mem=6gb:pcmem=6gb
+#PBS -l walltime=00:00:30
+
+#PBS -J 1-4
+
+cd /extra/sarawillis/ArrayJobWithFasta
+
+### Pull filename from line number = PBS_ARRAY_INDEX
+CurrentFastaFile="$( sed "${PBS_ARRAY_INDEX}q;d" InputFiles )"
+
+### Prints job number and possible command for demonstration purposes
+echo "Job Name: $PBS_JOBID"
+echo "./executable -o output${PBS_ARRAY_INDEX} ${CurrentFastaFile}.fastq"
