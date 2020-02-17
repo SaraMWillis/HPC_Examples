@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#PBS -q standard
+#PBS -W group_list=sarawillis
+
+#PBS -N Basic_Array_Job
+ 
+#PBS -l select=1:ncpus=1:mem=6gb:pcmem=6gb
+#PBS -l walltime=00:00:30
+
+#PBS -J 1-10
+
+echo "Job Name: $PBS_JOBID, Reading File: input_file_${PBS_ARRAY_INDEX}.txt"
