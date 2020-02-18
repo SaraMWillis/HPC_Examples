@@ -105,12 +105,12 @@ else
     if [ $Globus_Error_Status -ne 0 ];
     then echo 'A Globus error has occured. Check logs and try again'
 
-	  # We kill the process in this case. I've had Globus throw errors and then not shut down,
-	  # leaving the process hanging indefinitely. This won't fly in a pipeline environment. 
+    # We kill the process in this case. I've had Globus throw errors and then not shut down,
+    # leaving the process hanging indefinitely. This won't fly in a pipeline environment. 
     # These errors usually happen when there's an incorrect path specified (i.e. a directory 
     # doesn't exist that the user is pointing to).
-	  globus task cancel $Task_ID
-	  exit 1
+    globus task cancel $Task_ID
+    exit 1
     fi
 
     # If all is well, our script is told to wait until the globus transfer has completed
