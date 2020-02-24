@@ -5,7 +5,6 @@ Figuring out effective ways to submit large numbers of jobs can be frustrating. 
 
 As a note, these scripts have typically been written in response to submitted user questions and as such may have some idiosynchracies that are specific to each case (I will try to iron out some of these oddities). Each script is designed to print commands and information specific to that job for better visualization/demonstration purposes. 
 
-Jobs were submitted on elgato cluster. Resource allocations can be modified to be used on ocelote
 
 ### What are some problems that arise when submitting lots of jobs?
 
@@ -16,9 +15,6 @@ Common things that can wreak havoc on HPC are submissions that overload our sche
 
 This can lead to low/nonexistent system performance and unhappy users. This is designed to be an expanding repo of techniques that will run jobs more efficiently without putting as much stress on the system. 
 
-### What are job arrays?
-
-_Coming soon_
 
 # Scripts
 
