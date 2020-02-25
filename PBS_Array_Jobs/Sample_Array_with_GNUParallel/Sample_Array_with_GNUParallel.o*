@@ -1,0 +1,8 @@
+JOB ID: 3028387[1].head1.cm.cluster HOST NODE: i7n0 EXAMPLE COMMAND: ./executable input_1
+JOB ID: 3028387[1].head1.cm.cluster HOST NODE: i7n0 EXAMPLE COMMAND: ./executable input_2
+JOB ID: 3028387[1].head1.cm.cluster HOST NODE: i7n0 EXAMPLE COMMAND: ./executable input_3
+JOB ID: 3028387[1].head1.cm.cluster HOST NODE: i7n0 EXAMPLE COMMAND: ./executable input_4
+JOB ID: 3028387[2].head1.cm.cluster HOST NODE: i1n17 EXAMPLE COMMAND: ./executable input_5
+JOB ID: 3028387[2].head1.cm.cluster HOST NODE: i1n17 EXAMPLE COMMAND: ./executable input_6
+JOB ID: 3028387[2].head1.cm.cluster HOST NODE: i1n17 EXAMPLE COMMAND: ./executable input_7
+JOB ID: 3028387[2].head1.cm.cluster HOST NODE: i1n17 EXAMPLE COMMAND: ./executable input_8
