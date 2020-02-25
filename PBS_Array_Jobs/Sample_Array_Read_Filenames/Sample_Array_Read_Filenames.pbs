@@ -10,11 +10,11 @@
 
 #PBS -J 1-4
 
-cd /extra/sarawillis/ArrayJobWithFasta
+### Change to the directory where the PBS script was submitted
+cd $PBS_O_WORKDIR
 
 ### Pull filename from line number = PBS_ARRAY_INDEX
 CurrentFastaFile="$( sed "${PBS_ARRAY_INDEX}q;d" InputFiles )"
 
 ### Prints job number and possible command for demonstration purposes
-echo "Job Name: $PBS_JOBID"
-echo "./executable -o output${PBS_ARRAY_INDEX} ${CurrentFastaFile}.fastq"
+echo "JOB NAME: $PBS_JOBID, EXAMPLE COMMAND: ./executable -o output${PBS_ARRAY_INDEX} ${CurrentFastaFile}"
