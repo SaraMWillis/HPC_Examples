@@ -3,7 +3,9 @@
 ## About
 Figuring out effective ways to submit large numbers of jobs can be frustrating. This repository is designed to try to help implement different techniques to run jobs as arrays/in parallel. They are written for submission with PBS scheduling software on University of Arizona's HPC. 
 
-As a note, these scripts have typically been written in response to submitted user questions and as such may have some idiosynchracies that are specific to each case (I will try to iron out some of these oddities). Each script is designed to print commands and information specific to that job for better visualization/demonstration purposes. 
+As a note, these scripts have typically been written in response to submitted user questions and as such may have some idiosynchracies that are specific to each case (I'm working to iron them out to make each example more uniform). Each script is designed to print commands and information specific to that job for better visualization/demonstration purposes. 
+
+HPC users should be able to run each script with minor modifications to experiment.
 
 
 ### What are some problems that arise when submitting lots of jobs?
@@ -21,36 +23,8 @@ This can lead to low/nonexistent system performance and unhappy users. This is d
 
 ## 1 Sample_Array_Job.pbs
 
-Designed to illustrate unzipping two related files that can be used for later work in an array job. Specifically, how to use the PBS array indices to pair files.
+Designed to illustrate a basic job array.
 
-submission:
-```
-$ qsub Sample_Array_Job.pbs
-```
-
-Output:
-
-```
-$ cat Sample_Array_Script.o*
-Job Name: 2907585[3].head1.cm.cluster
-tar -xzvf input_file_3_1.tar.gz
-tar -xzvf input_file_3_2.tar.gz
-Job Name: 2907585[4].head1.cm.cluster
-tar -xzvf input_file_4_1.tar.gz
-tar -xzvf input_file_4_2.tar.gz
-Job Name: 2907585[5].head1.cm.cluster
-tar -xzvf input_file_5_1.tar.gz
-tar -xzvf input_file_5_2.tar.gz
-Job Name: 2907585[6].head1.cm.cluster
-tar -xzvf input_file_6_1.tar.gz
-tar -xzvf input_file_6_2.tar.gz
-Job Name: 2907585[7].head1.cm.cluster
-tar -xzvf input_file_7_1.tar.gz
-tar -xzvf input_file_7_2.tar.gz
-Job Name: 2907585[8].head1.cm.cluster
-tar -xzvf input_file_8_1.tar.gz
-tar -xzvf input_file_8_2.tar.gz
-```
 
 
 
@@ -67,13 +41,13 @@ Sometimes you want to run multiple jobs where each opens a different file to ana
 
 The user can create an file with one filename per line and read them in using array indices. This script is designed to illustrate this method.
 
-In this particular case, the working directory contains four fastq files ```SRR2309587.fastq```, ```SRR3050489.fastq```, ```SRR305356.fastq```, and ```SRR305p0982.fastq```. The filenames were then saved to the file ```filenames```:
+In this example, the working directory was made to contain four fastq files: ```SRR2309587.fastq```, ```SRR3050489.fastq```, ```SRR305356.fastq```, and ```SRR305p0982.fastq```. The filenames were then saved to the file ```filenames```:
 
 ```
 $ ls *.fastq > filenames
 ```
 
-The files were then located by the PBS script using the job array ID to select specific lines from ```filenames```.
+The files were located by the PBS script using the job array ID to select specific lines from ```filenames```.
 
 A sample command was then printed as output for demonstration purposes. Submitting the file using ```qsub SampleArrayJob_UseInputFiles.pbs``` produces the output:
 
