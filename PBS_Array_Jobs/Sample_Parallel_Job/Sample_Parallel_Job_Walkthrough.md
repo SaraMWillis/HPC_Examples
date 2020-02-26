@@ -32,13 +32,13 @@ The meat of the command lies here:
 seq 1 100 | parallel 'DATE=$( date +"%T" ) && sleep 0.{} && echo "Host: $HOSTNAME ; Date: $DATE; {}"'
 ```
 
-```seq 1 100``` Generates a list between 1 and 100 (inclusive). We pipe that into a parallel command which will generate a task per element
+```seq 1 100``` Generates a list between 1 and 100 (inclusive). We pipe that into a parallel command which will generate one task per element
 
-```parallel``` is how we use Gnu Parallel to execute the tasks. It will find the space on our node as it works through the relevant tasks. Everything in ```'...'``` is what will be executed
+```parallel``` is how we use Gnu Parallel to execute the tasks. It will find the space on our node as it works through the relevant tasks. Everything in ```'...'``` is the command that will be executed
 
-Inside the ```'...'```:
+**Inside the ```'...'```:**
 
-```DATE=$( date +"%T" )``` sets DATE for print out so we can visualize the tasks and how they're being executed
+```DATE=$( date +"%T" )``` sets DATE so we can visualize the tasks and when they're being executed
 
 ```sleep 0.{}``` An odd choice, sure, but I find it informative. It drives home that tasks are being executed in parallel and not in serial since each task will sleep for 0.n seconds, where n is the input integer from the ```seq``` command. This means, for example, the 9th task will wait longer than the 17th task, as can be seen in the output file.  
 
