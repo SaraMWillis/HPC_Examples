@@ -40,9 +40,9 @@ Inside the ```'...'```:
 
 ```DATE=$( date +"%T" )``` sets DATE for print out so we can visualize the tasks and how they're being executed
 
-```sleep 0.{}``` An odd choice, sure, but I find it informative. It drives home that tasks are being executed in parallel and not in serial since each task will sleep for 0.n seconds, where n is the input integer from the ```seq``` command. This means, for example, the 9th task will wait longer than the 17th task, as can be seen in the output file. Waiting also shows how tasks are put on hold, and then are executed so you can visualize how the queue is worked through as space becomes available. 
+```sleep 0.{}``` An odd choice, sure, but I find it informative. It drives home that tasks are being executed in parallel and not in serial since each task will sleep for 0.n seconds, where n is the input integer from the ```seq``` command. This means, for example, the 9th task will wait longer than the 17th task, as can be seen in the output file.  
 
-```echo "Host: $HOSTNAME ; Date: $DATE; {}"``` Prints out information that shows the user what's happening
+```echo "Host: $HOSTNAME ; Date: $DATE; {}"``` Prints out the relevant information. ```{}``` is the piped input which, in this case, will be an integer between 1 and 100. 
 
 ## Script Submission Command
 ```
@@ -51,6 +51,13 @@ $ qsub Sample_Parallel_Job.pbs
 ```
 
 ## Output Files
-Since this isn't an array job, there will only be one output
+Since this isn't an array job, there will only be one output file:
+
+```
+```
 
 ## File Contents
+
+```
+
+```
