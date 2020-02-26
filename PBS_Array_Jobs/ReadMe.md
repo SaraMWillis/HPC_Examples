@@ -1,5 +1,7 @@
 # Read Me
 
+_This repository is still a work in progress and may have half-finished thoughts/poor documentation/inconsistencies. I'm working on cleaning this up_
+
 ## About
 Figuring out effective ways to submit large numbers of jobs can be frustrating. This repository is designed to try to help implement different techniques to run jobs as arrays/in parallel. They are written for submission with PBS scheduling software on University of Arizona's HPC. 
 
