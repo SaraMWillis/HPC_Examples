@@ -23,72 +23,36 @@ This can lead to low/nonexistent system performance and unhappy users. This is d
 # Scripts
 
 
-## 1 Sample_Array_Job.pbs
-
-Designed to illustrate a basic job array.
-
-
-
-
-
-
-
-## 2 SampleArrayJob_ReadInInputFilenames.pbs
-
+## Basic_Array_Job
 
 #### Problem
-Sometimes you want to run multiple jobs where each opens a different file to analyze. What happens if the naming scheme isn't conducive to automating the process using simple array indices (i.e. 1.txt, 2.txt, ...)? 
+
+A user wants to submit multiple jobs using the same script with different input.
 
 #### Solution
 
-The user can create an file with one filename per line and read them in using array indices. This script is designed to illustrate this method.
-
-In this example, the working directory was made to contain four fastq files: ```SRR2309587.fastq```, ```SRR3050489.fastq```, ```SRR305356.fastq```, and ```SRR305p0982.fastq```. The filenames were then saved to the file ```filenames```:
-
-```
-$ ls *.fastq > filenames
-```
-
-The files were located by the PBS script using the job array ID to select specific lines from ```filenames```.
-
-A sample command was then printed as output for demonstration purposes. Submitting the file using ```qsub SampleArrayJob_UseInputFiles.pbs``` produces the output:
-
-```
-$ cat Sample_Array_Script.o*
-Job Name: 2914903[1].head1.cm.cluster
-./executable -o output1 SRR2309587.fastq
-Job Name: 2914903[2].head1.cm.cluster
-./executable -o output2 SRR3050489.fastq
-Job Name: 2914903[3].head1.cm.cluster
-./executable -o output3 SRR305356.fastq
-Job Name: 2914903[4].head1.cm.cluster
-./executable -o output4 SRR305p0982.fastq
-```
+Using an array job can run multiple tasks and differentiate them using array indices. The tasks are run using only one ```qsub``` command.
 
 
-## 3 Sample_Array_with_GNUParallel.pbs
+## 2 Sample_Array_Read_Filenames
 
-This script is roughly an extension of Sample_Array_Job.pbs, but with the additional step of parallelizing tasks within each subjob. This is effective for efficiently running a large number of single-core processes. Submitting many (~thousands) of jobs can overwhelm the scheduler leading to less than optimal system performance. When each subjob is a single task only using one core, they can be combined to run in parallel. This allows a large number to be run simultaneously without submitting each individual task as its own subjob. 
 
-The parallelization was accomplished using GNU Parallel (https://www.gnu.org/software/parallel/)
+#### Problem
 
-The output is for demonstration purposes. It shows the job ID, array index, the subjob's host node, and a possible command (running an R script) which includes the task index.
+A user wants to run multiple jobs where each opens a different file to analyze but the naming scheme isn't conducive to automating the process using simple array indices as shown in Basic_Array_Job (i.e. 1.txt, 2.txt, ...)? 
 
-submission:
-```
-$ qsub Sample_Array_with_GNUParallel.pbs
-```
+#### Solution
 
-Output:
+The user can create an file with one filename per line and read them in using array indices. 
 
-```
-$ cat Array_Parallel_Testing.o*
-2907196[1].head1.cm.cluster i4n17 Rscript sample_script.R 1 RO2
-2907196[1].head1.cm.cluster i4n17 Rscript sample_script.R 2 RO2
-2907196[1].head1.cm.cluster i4n17 Rscript sample_script.R 3 RO2
-2907196[1].head1.cm.cluster i4n17 Rscript sample_script.R 4 RO2
-2907196[2].head1.cm.cluster i4n14 Rscript sample_script.R 5 RO2
-2907196[2].head1.cm.cluster i4n14 Rscript sample_script.R 6 RO2
-2907196[2].head1.cm.cluster i4n14 Rscript sample_script.R 7 RO2
-2907196[2].head1.cm.cluster i4n14 Rscript sample_script.R 8 RO2
-```
+
+## Sample_Array_with_GNUParallel.pbs
+
+#### Problem
+
+A user wants to run many, many single-core tasks.
+
+#### Solution
+
+This script is roughly an extension of Sample_Array_Job.pbs, but with the additional step of parallelizing tasks within each subjob. The parallelization was accomplished using GNU Parallel (https://www.gnu.org/software/parallel/)
+
