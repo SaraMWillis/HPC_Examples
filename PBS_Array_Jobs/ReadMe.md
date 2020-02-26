@@ -50,7 +50,7 @@ The user can create an file with one filename per line and read them in using ar
 
 #### Problem
 
-A user wants to run many, many single-core tasks.
+A user wants to run more tasks than the PBS scheduler can keep track of (e.g. thousands)
 
 #### Solution
 
