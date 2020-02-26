@@ -61,6 +61,8 @@ total 0
 
 ## File Contents
 
+The file included in this repository is a concatenation of all the job's output files as shown by the command below.
+
 ```
 $ cat Basic_Array_Job.o87274.*
 Job Name: 87274[1].elgato-adm, Reading File: input_file_1.txt
