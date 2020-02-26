@@ -2,6 +2,8 @@
 
 Basic_Array_Job is designed to demonstrate how to use an array job to execute the same script multiple times with different input.
 
+_This script was written and executed on elgato, but can be run with minor modifications to the resource requests on ocelote as well_
+
 ## What problem does this help fix?
 Without an array job, a user may be tempted to submit multiple jobs with a for loop, e.g.:
 
