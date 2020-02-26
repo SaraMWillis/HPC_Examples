@@ -34,7 +34,7 @@ A user wants to submit multiple jobs using the same script with different input.
 Using an array job can run multiple tasks and differentiate them using array indices. The tasks are run using only one ```qsub``` command.
 
 
-## 2 Sample_Array_Read_Filenames
+## Sample_Array_Read_Filenames
 
 
 #### Problem
