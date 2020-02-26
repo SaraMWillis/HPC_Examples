@@ -1,6 +1,6 @@
 # Walkthrough 
 
-Sample_Parallel_Job is designed to demonstrate how to parallelize multiple tasks within one job with Gnu Parallel. 
+Sample_Parallel_Job is designed to demonstrate how to parallelize multiple tasks within one job. 
 
 ## What Problem does this help fix?
 
