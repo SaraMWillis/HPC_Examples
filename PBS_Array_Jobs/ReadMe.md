@@ -7,7 +7,7 @@ Figuring out effective ways to submit large numbers of jobs can be frustrating. 
 
 As a note, these scripts have typically been written in response to submitted user questions and as such may have some idiosynchracies that are specific to each case (I'm working to iron them out to make each example more uniform). Each script is designed to print commands and information specific to that job for better visualization/demonstration purposes. 
 
-HPC users should be able to run each script with minor modifications to experiment.
+HPC users should be able to run each script with minor modifications (i.e. adding their PI's group name) to experiment.
 
 
 ### What are some problems that arise when submitting lots of jobs?
