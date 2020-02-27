@@ -48,7 +48,7 @@ A user wants to run multiple jobs where each opens a different file to analyze b
 
 #### Solution
 
-The user can create an file with one filename per line and read them in using array indices. 
+The user can create an input file with one filename per line. One filename is read in per array job using array indices. 
 
 ### Sample_Array_Input_Parameters
 
