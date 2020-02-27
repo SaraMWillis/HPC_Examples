@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#PBS -q standard
+#PBS -W group_list=<GROUP NAME>
+
+#PBS -N Sample_Array_Input_Parameters
+
+#PBS -l select=1:ncpus=1:mem=6gb:pcmem=6gb
+#PBS -l walltime=00:00:10
+
+#PBS -J 1-10
+
+cd $PBS_O_WORKDIR
+
+read first_parameter second_parameter third_parameter <<< $( sed "${PBS_ARRAY_INDEX}q;d" input_parameters )
+
+echo "Job ID: $PBS_JOBID ; Host Node : $HOSTNAME ; Sample Command : ./executable $first_parameter $second_parameter $third_parameter"
