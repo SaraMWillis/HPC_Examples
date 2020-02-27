@@ -5,8 +5,8 @@
 
 #PBS -N Sample_Array_with_GNUParallel
 
-#PBS -l select=1:ncpus=4:mem=24gb:pcmem=6gb
-#PBS -l walltime=00:00:30
+#PBS -l select=1:ncpus=28:mem=168gb:pcmem=6gb
+#PBS -l walltime=00:01:00
 
 #PBS -J 1-2
 
@@ -14,7 +14,7 @@ module load parallel
 
 cd $PBS_O_WORKDIR
 
-BLOCK_SIZE=4
+BLOCK_SIZE=56
 
 ### Prints output to show the task indices, the job ID, node ID, and a possible command that could be executed 
 
