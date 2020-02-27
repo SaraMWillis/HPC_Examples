@@ -70,5 +70,127 @@ $ qsub Sample_Array_with_GNUParallel.pbs
 
 ## Output Files
 
+```
+$ ls Sample_Array_with_GNUParallel.o*
+Sample_Array_with_GNUParallel.o3031256.1
+Sample_Array_with_GNUParallel.o3031256.2
+```
 
 ## File Contents
+
+Below, you can see that 112 jobs were run using an array job with two subjobs on two nodes.
+```
+$ cat Sample_Array_with_GNUParallel.o*
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_1
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_2
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_3
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_4
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_5
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_6
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_7
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_8
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_9
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_10
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_11
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_12
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_13
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_14
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_15
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_16
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_17
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_18
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_19
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_20
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_21
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_22
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_23
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_24
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_25
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_26
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_27
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_28
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_29
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_30
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_31
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_32
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_33
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_34
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_35
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_36
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_37
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_38
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_39
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_40
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_41
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_42
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_43
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_44
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_45
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_46
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_47
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_48
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_49
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_50
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_51
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_52
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_53
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_54
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_55
+JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_56
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_57
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_58
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_59
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_60
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_61
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_62
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_63
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_64
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_65
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_66
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_67
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_68
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_69
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_70
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_71
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_72
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_73
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_74
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_75
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_76
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_77
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_78
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_79
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_80
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_81
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_82
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_83
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_84
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_85
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_86
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_87
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_88
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_89
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_90
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_91
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_92
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_93
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_94
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_95
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_96
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_97
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_98
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_99
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_100
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_101
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_102
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_103
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_104
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_105
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_106
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_107
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_108
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_109
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_110
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_111
+JOB ID: 3031256[2].head1.cm.cluster HOST NODE: i4n20 EXAMPLE COMMAND: ./executable input_112
+```
