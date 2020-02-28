@@ -1,6 +1,6 @@
 # Walkthrough
 
-Sample_Array_Input_Parameters shows how to feed parameters to different subjobs in an array by pulling them from an imput file. 
+Sample_Array_Input_Parameters shows how to feed parameters to different subjobs in an array by pulling them from an input file. 
 
 ## What problem does this help fix?
 
