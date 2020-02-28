@@ -44,13 +44,13 @@ The important line that makes this an array job above is
 ```
 #PBS -J 1-4
 ```
-The ```-J``` option tells PBS that you want to submit the script multiple times. In this case, we are submitting this script four times with PBS array indices 1 through 4 (inclusive). For each of these jobs, we'll make use of these array indices to differentiate the input/output:
+The ```-J``` option tells PBS that you want to submit the script as an array. In this case, we are submitting this script four times with PBS array indices 1 through 4 (inclusive). For each of these jobs, we'll make use of the array index to differentiate the input/output:
 
 ```
 ### Pull filename from line number = PBS_ARRAY_INDEX
 CurrentFastaFile="$( sed "${PBS_ARRAY_INDEX}q;d" InputFiles )"
 ```
-As described in the section above, each job uses this line uses the pull the line number from ```InputFiles``` that corresponds to the array index number. 
+As described in the section above, each job uses this command to pull the line number from ```InputFiles``` that corresponds to the index number. 
 
 Finally, we print job information and a possible command that could be executed for demonstration/visualization purposes.
 ```
