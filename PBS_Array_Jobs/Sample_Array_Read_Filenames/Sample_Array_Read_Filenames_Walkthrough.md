@@ -1,9 +1,9 @@
 # Sample Array : Read Filenames
 
-#### Problem
+### Problem
 Sometimes you want to run multiple jobs where each opens a different file to analyze. What happens if the naming scheme isn't conducive to automating the process using simple array indices (i.e. 1.txt, 2.txt, ...)? 
 
-#### Solution
+### Solution
 
 The user can create a file with one filename per line and read them in using array indices. This script is designed to illustrate this method.
 
