@@ -21,6 +21,42 @@ CurrentFastaFile="$( sed "${PBS_ARRAY_INDEX}q;d" InputFiles )"
 
 Each job in the array will have an index associated with it. We use these to read in the relevant lines, e.g., for the 3rd job in an array, ```PBS_ARRAY_INDEX``` will be 3. The above line will then read in the third line from the input file and will save the text as the variable ```CurrentFastaFile```
 
+### Script Breakdown
+
+PBS Directives
+```
+#!/bin/bash
+
+#PBS -q standard
+#PBS -W group_list=<group name>
+
+#PBS -N Sample_Array_Read_Filenames
+ 
+#PBS -l select=1:ncpus=1:mem=6gb:pcmem=6gb
+#PBS -l walltime=00:00:30
+
+#PBS -J 1-4
+
+### Change to the directory where the PBS script was submitted
+cd $PBS_O_WORKDIR
+```
+The important line that makes this an array job above is 
+```
+#PBS -J 1-4
+```
+The ```-J``` option tells PBS that you want to submit the script multiple times. In this case, we are submitting this script four times with PBS array indices 1 through 4 (inclusive). For each of these jobs, we'll make use of these array indices to differentiate the input/output:
+
+```
+### Pull filename from line number = PBS_ARRAY_INDEX
+CurrentFastaFile="$( sed "${PBS_ARRAY_INDEX}q;d" InputFiles )"
+```
+As described in the section above, each job uses this line uses the pull the line number from ```InputFiles``` that corresponds to the array index number. 
+
+Finally, we print job information and a possible command that could be executed for demonstration/visualization purposes.
+```
+### Prints job number and possible command for demonstration purposes
+echo "JOB NAME: $PBS_JOBID, EXAMPLE COMMAND: ./executable -o output${PBS_ARRAY_INDEX} ${CurrentFastaFile}"
+```
 
 ### Submitting the Job
 ``` 
