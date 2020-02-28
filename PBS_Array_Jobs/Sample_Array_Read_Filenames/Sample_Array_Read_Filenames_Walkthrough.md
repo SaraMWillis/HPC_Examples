@@ -7,7 +7,7 @@ Sometimes you want to run multiple jobs where each opens a different file to ana
 
 The user can create a file with one filename per line and read them in using array indices. This script is designed to illustrate this method.
 
-In this example, we assume the working directory contains four fastq files ```SRR2309587.fastq```, ```SRR3050489.fastq```, ```SRR305356.fastq```, and ```SRR305p0982.fastq```. The can be saved to the file ```filenames``` using:
+In this example, we assume the working directory contains four fastq files ```SRR2309587.fastq```, ```SRR3050489.fastq```, ```SRR305356.fastq```, and ```SRR305p0982.fastq```. They can be saved to the file ```filenames``` using:
 
 ```
 $ ls *.fastq > filenames
