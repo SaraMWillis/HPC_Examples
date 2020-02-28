@@ -28,6 +28,30 @@ This can lead to low/nonexistent system performance and unhappy users. This is d
 
 ## Array Jobs
 
+To submit an array job with PBS, use the command:
+
+```
+#PBS -J N-M
+```
+This tells PBS the number of jobs you want to run with this script and the range of the indices, from ```N``` to ```M``` inclusive, where ```N``` and ```M``` are integers. So, for example, if you wanted to run four jobs, you could use ```#PBS -J 1-4```, ```#PBS -J 5-8```, etc... 
+
+You may submit your job with a single command:
+
+```
+$ qsub <script_name>.pbs
+```
+
+and you will be returned a single job ID of the form: ```<job_number>[]```. PBS will schedule as many jobs for you as indices you've requested with associated subjob IDs of the form ```<job_number>[<array_index>]```. More explicitly:
+
+```
+Overall Job ID : <job_number>[] # the [] indicates it's an array
+Job 1          : <job_number>[1]
+Job 2          : <job_number>[2]
+Job 3          : <job_number>[3]
+...
+```
+
+
 ### Basic_Array_Job
 
 #### Problem
