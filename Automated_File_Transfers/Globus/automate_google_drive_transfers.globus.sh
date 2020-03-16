@@ -97,7 +97,8 @@ else
     sleep 2
 
     # I'm using Globus to print a json-formatted error report. Python reads this in from stdout
-    # and checks if there are any error messages. 
+    # and checks if there are any error messages. I'm using python to check the errors, but this
+    # shouldn't be an issue since the globus cli needs an active python3 virtual environment to work.
     Globus_Error_Status=$(globus task event-list $Task_ID --filter-errors --format json | python3 -c "import sys, json; print(len(json.load(sys.stdin)['DATA']))")
 
     # Globus_Error_Status is the number of distinct errors thrown by the transfer command. If
