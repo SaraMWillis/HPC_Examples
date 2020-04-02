@@ -42,7 +42,7 @@ $ which globus
 ~/my_globus_environment/bin/globus
 ```
 
-Each time you want to use globus in your personal account, you will need to activate the virtual environment. If desired, you may add an activate command (e.g. ```source ~/my_globus_environment/bin/activate```) to your .bashrc file so this is done automatically each time you log in.
+Each time you log in, you will need to activate the virtual environment before you are able to use globus. If desired, you may add an activate command (e.g. ```source ~/my_globus_environment/bin/activate```) to your .bashrc file so this is done automatically.
 
 ### Setup
 
@@ -83,3 +83,37 @@ Transfers that are initiated through the CLI may be monitored via the Globus web
 
 This repository currently contains a single bash script that is used as an example of how to integrate file transfers in a user's workflow. The goal is for this repository to grow as I continue to help users with their transfer needs. A benchmarking script is currently available (used to test Globus transfers speeds) [in another of my github repositories](https://github.com/SaraMWillis/Cloud_Storage_Benchmarking/tree/master/AWS_S3/BenchmarkingScripts). This script is written in python and may be modified to create a script for automating file transfers. It is likely I will do this in the near future.
 
+
+## Can I Access /tmp with the Globus CLI?
+
+Yes, but it's a little more involved. Each compute node has local storage called /tmp which is not part of the shared storage. To access /tmp, you'll need to set up a personal endpoint and activate it when running a job. 
+
+### Installation
+
+Start by activating your Globus environment, e.g.:
+
+```
+$ source ~/my_globus_environment/bin/activate
+```
+
+Next, install globusconnectpersonal and create an endpoint:
+
+```
+$ cd ~
+$ wget https://downloads.globus.org/globus-connect-personal/linux/stable/globusconnectpersonal-latest.tgz
+$ tar xzf globusconnectpersonal-latest.tgz
+$ cd globusconnectpersonal-3.0.4
+$ globus endpoint create --personal my-linux-laptop
+```
+This will generate an endpoint and setup ID. Save these somewhere. Then:
+
+```
+$ ./globusconnectpersonal -setup <saved setup key>
+```
+Lastly, you'll need to change the contents of a file. You can make a backup just in case. Change the contents of ```~/.globusonline/lta/config-paths``` to ```/tmp,0,1```. Without this step, trying to access /tmp will through a permissions error.
+
+Once everything is configured, you can start a local session using 
+```
+./globusconnectpersonal -start & 
+```
+And then use the endpoint's ID to make transfers as you normally would. An example script and its output is stored in this repository as ```globus_temp_access.pbs``` and ```globus_temp_access.out```
