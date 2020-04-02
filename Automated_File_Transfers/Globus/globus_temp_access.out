@@ -1,0 +1,15 @@
+exporting endpoint names
+activating globus virtualenv
+starting globus personal connect
+making directory and file for test
+    dir : /tmp/sara_globus_temp_access_test
+    file: /tmp/sara_globus_temp_access_test/i0n9
+listing globus endpoint contents
+i0n9
+performing test transfer to google drive
+removing temporary directory
+ending globus personal connect session
+Globus Connect Personal is currently running and connected to Globus Online
+Sending stop signal... Done
+Your group hpcteam has been charged 0:00:23 (0:00:23 X 1 cpus).
+You previously had 58080:36:54.  You now have 58080:36:31 of standard_time remaining
