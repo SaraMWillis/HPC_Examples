@@ -1,0 +1,40 @@
+#!/bin/bash
+#PBS -q standard
+#PBS -W group_list=<group_list>
+#PBS -N globus_temp_access
+#PBS -l select=1:ncpus=1:mem=6gb:pcmem=6gb
+#PBS -l walltime=00:10:00
+
+echo "exporting endpoint names"
+export HPC_personal_endpoint="<saved_endpoint_ID>"
+export Google_Drive_endpoint="<google_drive_endpoint_ID>"
+
+echo "activating globus virtualenv"
+source ~/Globus_virtual_Env/bin/activate
+
+echo "starting globus personal connect"
+/home/u21/sarawillis/globusconnectpersonal-3.0.4/globusconnectpersonal -start &
+### We force our script to wait so it doesn't bulldoze through the connection
+sleep 10
+
+echo "making directory and file for test"
+echo "    dir : /tmp/sara_globus_temp_access_test"
+echo "    file: /tmp/sara_globus_temp_access_test/$HOSTNAME"
+mkdir /tmp/sara_globus_temp_access_test/
+touch /tmp/sara_globus_temp_access_test/$HOSTNAME
+
+echo "listing globus endpoint contents"
+globus ls $HPC_personal_endpoint:/tmp/sara_globus_temp_access_test/
+
+echo "performing test transfer to google drive"
+transfer_execution_command="globus transfer $HPC_personal_endpoint:/tmp/sara_globus_temp_access_test/$HOSTNAME $Google_Drive_endpoint:/$HOSTNAME"
+Task_ID_Label=$( eval $transfer_execution_command | grep 'Task ID')
+Task_ID=${Task_ID_Label/Task ID: /}
+
+globus task wait $Task_ID
+
+echo "removing temporary directory"
+rm -r /tmp/sara_globus_temp_access_test/
+
+echo "ending globus personal connect session"
+/home/u21/sarawillis/globusconnectpersonal-3.0.4/globusconnectpersonal -stop
