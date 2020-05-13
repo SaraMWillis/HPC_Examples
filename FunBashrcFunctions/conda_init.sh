@@ -5,6 +5,10 @@
 # activated. This function is designed to suppress the activation
 # of anaconda until the user chooses by executing the command "xconda"
 
+# for anaconda3. User should modify to anaconda2 if applicable
+
+# NOTE: running xconda in a batch job will not activate the environment
+
 # Location where anaconda is installed
 CONDAROOT=$HOME
 
@@ -24,7 +28,7 @@ function xconda () {
 if [ -z "$CONDA" ]; then
     :
     if [ -z "$CLUSTER" ]; then
-        :
+        : # suppresses message if not on login node. Message on filexfer will cause issues
     else
         echo "Conda environment inactive. To activate use: xconda"
     fi
