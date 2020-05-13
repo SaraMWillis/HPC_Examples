@@ -28,7 +28,7 @@ function xconda () {
 if [ -z "$CONDA" ]; then
     :
     if [ -z "$CLUSTER" ]; then
-        : # suppresses message if not on login node. Message on filexfer will cause issues
+        : # suppresses message if not on login node. Message with sftp on filexfer will cause issues
     else
         echo "Conda environment inactive. To activate use: xconda"
     fi
