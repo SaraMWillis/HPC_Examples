@@ -1,6 +1,6 @@
 # Slurm Examples
 
-slurm_cheat_sheet is something I keep as a hidden file in my home directory on HPC. I have an alias set up so I can type ```shelp``` which prints the contents to my terminal.
+slurm_cheat_sheet (found in this directory) is something I keep as a hidden file in my home directory on HPC. I have an alias set up so I can type ```shelp``` which prints the contents to my terminal.
 
 
 ## Environment Variables
