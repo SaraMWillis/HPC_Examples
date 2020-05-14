@@ -1,0 +1,33 @@
+###########################################################################
+#                            Slurm Cheat Sheet                            #
+###########################################################################
+
+
+                            Information Requests                           
+---------------------------------------------------------------------------
+sinfo                        : Shows queue names, nodes, and node status'
+scontrol show jobid <jobid>  : Show info about specific job
+squeue [-u <username>]       : Show info on running jobs/user-specific jobs
+smap -i <sec>                : Show job info every <sec> seconds
+sacct --format=jobid,jobname,: Show historical information about completed
+        account,partition,     jobs
+        ntasks,alloccpus,
+        elapsed,state,
+        exitcode -j <jobid>
+sinfo -p <queue>             : Show runtimes and available nodes for a 
+                               particular queue/partition
+
+
+                              Job Submissions                              
+---------------------------------------------------------------------------
+sbatch                       : Submits batch job
+sbatch --array=<m>-<n>       : Submits array job w/indices m through n
+
+
+                           Environment Variables                           
+---------------------------------------------------------------------------
+$SLURM_SUBMIT_DIR            : Directory where job was submitted. Same as
+                               $PBS_O_WORKDIR
+$SLURM_ARRAY_TASK_ID         : Array task ID. Same as $PBS_ARRAY_INDEX  
+$SLURM_JOB_ID                : Slurm job ID. Same as $PBS_JOBID 
+$SLURM_JOB_NAME              : Slurm job name. Same as $PBS_JOBNAME
