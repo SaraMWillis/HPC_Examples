@@ -5,7 +5,7 @@
 #SBATCH --mem-per-cpu=1GB
 #SBATCH --oversubscribe
 #SBATCH --time=00:10:00
-#SBATCH --job-name=slurm-test
+#SBATCH --job-name=mpi-test
 #SBATCH --partition=windfall
 #SBATCH --output=slurm-test.out
 
