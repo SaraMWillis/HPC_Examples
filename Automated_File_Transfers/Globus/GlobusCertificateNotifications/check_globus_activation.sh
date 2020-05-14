@@ -13,18 +13,11 @@ HOUR_EXP=${CERTIFICATE_ARR[3]}
 
 
 if [ $ACTIVE == False ]; then
-    printf "Subject: Globus Certificate Expired\n
-          This message is to inform you that your UArizona Globus certificate has expired. 
-          To renew, visit: www.globus.org" > globus_email.tmp
-    sendmail $USER_EMAIL <globus_email.tmp
-    rm globus_email.tmp
+    printf "Subject: Globus Certificate Expired\nThis message is to inform you that your UArizona Globus certificate has expired.\nTo renew, visit: www.globus.org" | sendmail $USER_EMAIL
+
 elif [ $TIME_REM -lt $MIN_SECONDS ] ; then
-    printf "Subject: Globus Certificate Expiring\n
-            This message is to inform you that your UArizona certificate will be expiring soon. 
-            Expiration Date: $DAY_EXP, Expiration Time: $HOUR_EXP
-            To renew your certificate, visit: www.globus.org" > globus_email.tmp
-    sendmail $USER_EMAIL <globus_email.tmp
-    rm globus_email.tmp
+    printf "Subject: Globus Certificate Expiring\nThis message is to inform you that your UArizona certificate will be expiring soon.\nExpiration Date: $DAY_EXP, Expiration Time: $HOUR_EXP\nTo renew your certificate, visit: www.globus.org" | sendmail $USER_EMAIL
+
 else
     :
 fi
