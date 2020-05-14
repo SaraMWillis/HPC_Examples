@@ -1,4 +1,4 @@
-JOB NAME: 4631, EXAMPLE COMMAND: ./executable -o output2 SRR3050489.fastq
-JOB NAME: 4630, EXAMPLE COMMAND: ./executable -o output1 SRR2309587.fastq
-JOB NAME: 4632, EXAMPLE COMMAND: ./executable -o output3 SRR305356.fastq
-JOB NAME: 4629, EXAMPLE COMMAND: ./executable -o output4 SRR305p0982.fastq
+JOB NAME: 4631, EXAMPLE COMMAND: ./executable SRR3050489.fastq
+JOB NAME: 4630, EXAMPLE COMMAND: ./executable SRR2309587.fastq
+JOB NAME: 4632, EXAMPLE COMMAND: ./executable SRR305356.fastq
+JOB NAME: 4629, EXAMPLE COMMAND: ./executable SRR305p0982.fastq
