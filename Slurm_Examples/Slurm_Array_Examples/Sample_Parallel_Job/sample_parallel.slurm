@@ -8,7 +8,7 @@
 #SBATCH --job-name=array-test
 #SBATCH --partition=windfall
 #SBATCH --open-mode=append
-#SBATCH --output=array-test.out
+#SBATCH --output=parallel-test.out
 
 
 ### Will update to module when available on system
