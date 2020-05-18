@@ -1,6 +1,6 @@
 # Automating Globus Transfers
 
-
+### Notice: this repo is under construction and is messy
 
 ## Setting up the Globus-CLI
 
