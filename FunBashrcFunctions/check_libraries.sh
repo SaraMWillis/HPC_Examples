@@ -1,6 +1,6 @@
 #### Checks for available system libraries. Input: full or partial library names
 
-function lib () {
+function library () {
     message="Searching for system libraries matching keyword: $1"
     echo; echo $message
     num=${#message}
