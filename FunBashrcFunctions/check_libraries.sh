@@ -1,17 +1,11 @@
-#### Checks for available system libraries. User can search using full or partial
-#### library name. Function will return names and locations or will report that no
-#### library was found.
+#### Checks for available system libraries. Input: full or partial library names
 
-printf_new() {
-    str=$1
-    num=$2
-    v=$(printf "%-${num}s" "$str")
-    echo "${v// /$str}"
-}
-function library () {
+function lib () {
     message="Searching for system libraries matching keyword: $1"
     echo; echo $message
-    printf_new "*" ${#message} ; echo
+    num=${#message}
+    v=$(printf "%-${num}s" "$message")
+    echo "${v// /$str}" ; echo
     if [[ $(ldconfig -p | grep $1) ]]; then
         ldconfig -p | grep $1 ; echo
     else
