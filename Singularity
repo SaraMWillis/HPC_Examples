@@ -31,7 +31,6 @@ From:  ubuntu:18.04
         ghostscript \
         libavcodec-dev \
         libavformat-dev \
-        libav-tools \
         libavutil-dev \
         libboost-program-options-dev \
         libboost-thread-dev \
