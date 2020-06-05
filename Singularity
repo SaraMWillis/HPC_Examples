@@ -15,7 +15,9 @@ From:  ubuntu:18.04
 
 %post
     echo "deb http://us.archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >/etc/apt/sources.list
-
+    add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
+    apt update
+    apt install libjasper1 libjasper-dev
     apt-get update && apt-get install -y --no-install-recommends \
         bison \
         build-essential \
@@ -50,11 +52,11 @@ From:  ubuntu:18.04
         libncurses5-dev \
         libnetcdf-dev \
         libperl-dev \
-        libpng12-dev \
+        libpng-dev \
         libpnglite-dev \
         libpq-dev \
         libproj-dev \
-        libreadline6 \
+        libreadline7 \
         libreadline6-dev \
         libsqlite3-dev \
         libswscale-dev \
