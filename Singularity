@@ -15,7 +15,7 @@ From:  ubuntu:18.04
 
 %post
     echo "deb http://us.archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >/etc/apt/sources.list
-    echo "deb http://us.archive.ubuntu.com/ubuntu/ yakkety universe" | sudo tee -a /etc/apt/sources.list
+    echo "deb http://us.archive.ubuntu.com/ubuntu/ yakkety universe" | tee -a /etc/apt/sources.list
     apt update
     apt install libjasper1 libjasper-dev
     apt-get update && apt-get install -y --no-install-recommends \
