@@ -15,7 +15,6 @@ From:  ubuntu:18.04
 
 %post
     echo "deb http://us.archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >/etc/apt/sources.list
-    add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
     apt update
     apt install libjasper1 libjasper-dev
     apt-get update && apt-get install -y --no-install-recommends \
