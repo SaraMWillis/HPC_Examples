@@ -35,13 +35,13 @@ module load parallel
 cd $PBS_O_WORKDIR
 ```
 
-This is the part where people get a bit more confused, so I'll try to break it down. The general goal here for illustration purposes is to set up a "block size." This is the number of tasks Gnu Parallel will be executing in each subjob. 
+This is the part where people get a bit more confused, so we'll go through each step. The general goal here for illustration purposes is to set up a "block size." This is the number of tasks Gnu Parallel will be executing in each subjob. 
 
 ```
 BLOCK_SIZE=56
 ```
 
-So in this case, I'm asking for 56 tasks per subjob. Since we're submitting an array job with two subjobs, that totals 112 tasks. 
+So in this case, I'm asking for 56 tasks per subjob (this was an arbitrary choice on my end). Since we're submitting an array job with two subjobs, that totals 112 tasks. 
 
 See online resources and [Sample_Parallel_Job](https://github.com/SaraMWillis/HPC_Examples/tree/master/PBS_Array_Jobs/Sample_Parallel_Job) for more information on how to use the parallel command. 
 
@@ -78,7 +78,7 @@ Sample_Array_with_GNUParallel.o3031256.2
 
 ## File Contents
 
-Below, you can see that 112 jobs were run using an array job with two subjobs on two nodes.
+Below, you can see that 112 jobs were run using an array job with two subjobs on two nodes, i4n22 and i4n20.
 ```
 $ cat Sample_Array_with_GNUParallel.o*
 JOB ID: 3031256[1].head1.cm.cluster HOST NODE: i4n22 EXAMPLE COMMAND: ./executable input_1
