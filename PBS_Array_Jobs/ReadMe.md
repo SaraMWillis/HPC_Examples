@@ -28,6 +28,8 @@ This can lead to low/nonexistent system performance and unhappy users. This is d
 
 ## Array Jobs
 
+An array job is a way to easily submit multiple jobs using the same PBS script with a single ```qsub```. When an array job is submitted, it will create multiple subjobs, each using the same PBS directives and same commands as written in the main script. 
+
 To submit an array job with PBS, use the command:
 
 ```
