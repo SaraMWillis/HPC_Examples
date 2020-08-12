@@ -1,1 +1,3 @@
 # Script Profiling
+
+This repository contains examples for estimating resource usage for user scripts. This can help with both knowing what to request when submitting jobs (e.g. how much memory you'll need) as well as debugging. When resources are exceeded on HPC, the scheduler (either PBS or SLURM) will kill your job. Sometimes it won't give much intelligible information and will give you a cryptic exit status such as ```Exit_status=271``` or ```Exit_status=265```. These typically can be traced to memory issues, but PBS may not report the memory usage as having been exceeded. A good thing to try is memory profiling benchmarking in an interactive session where you can monitor your job in realtime. These scripts provide some ideas for how to go about it. 
