@@ -4,6 +4,7 @@ MirrorURL: http://mirror.centos.org/centos-%{OSVERSION}/%{OSVERSION}/os/$basearc
 Include: yum wget
 %setup
    # commands to be executed on host outside container during bootstrap
+   wget https://developer.nvidia.com/compute/machine-learning/cudnn/secure/8.0.3.33/11.0_20200825/cudnn-11.0-linux-x64-v8.0.3.33.tgz
    cp ./packages/cudnn-8.0-linux-x64-v6.tgz $SINGULARITY_ROOTFS
 %test
    # commands to be executed within container at close of bootstrap process
