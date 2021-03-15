@@ -1,8 +1,8 @@
 # Read Me
 _This repository could be considered more about "coulda" and less about "shoulda"_
-Transferring files to/from an individual compute node's local storage (i.e. /tmp) using Globus is a non-trivial task. The reason for this is because the endpoint that is configured for HPC is specifically for the storage array and so it does not "see" any of the compute nodes. When it is asked to look in /tmp, it will only ever look in the /tmp directory on the storage array. 
+Transferring files to/from an individual compute node's local storage (i.e. /tmp) using Globus is a non-trivial task. This is because the endpoint configured for HPC is specifically for the storage array and so it does not "see" any of the compute nodes. 
 
-It is possible to connect to /tmp, but it requires some fancy footwork and I'm ultimately undecided on whether it's worth it. I will post my results below with the caution that I cannot guarantee the robustness of the techniques described. 
+It is possible to connect to /tmp, but it requires some fancy footwork and I don't think it's worth it. I will post the code anyway. 
 
 To do this:
 
